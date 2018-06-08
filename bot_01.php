@@ -69,6 +69,12 @@ else if($message == "หิวจุง"){
         $arrayPostData['messages'][0]['text'] = "หาไรกินสิครับ 555";
         replyMsg($arrayHeader,$arrayPostData);
     }
+else if($message == "กี่โมงแล้ว"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = date_default_timezone_set('asia/bangkok');echo date('d-m-y h:i:s');
+        replyMsg($arrayHeader,$arrayPostData);
+    }
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
