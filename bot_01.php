@@ -63,7 +63,7 @@ else if($message == "หิวจุง"){
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ผมงงอ่ะ ขอใหม่ได้ป่ะ";
+        $arrayPostData['messages'][0]['text'] = "ผมงงอ่ะ พิมพ์ใหม่ได้ป่ะ";
         replyMsg($arrayHeader,$arrayPostData);
     }
 function replyMsg($arrayHeader,$arrayPostData){
