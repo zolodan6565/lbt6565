@@ -57,7 +57,7 @@
  else if($message == "ถูกหวย"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ห้ะ! เอามาแบ่งดิ 555";
+        $arrayPostData['messages'][0]['text'] = "ห้ะ! เอามาแบ่งบ้างดิ หึหึหึหึ";
         $arrayPostData['messages'][1]['type'] = "sticker";
         $arrayPostData['messages'][1]['packageId'] = "2";
         $arrayPostData['messages'][1]['stickerId'] = "515";
