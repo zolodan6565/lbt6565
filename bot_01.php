@@ -85,7 +85,7 @@ else if ($message == "กี่โมงแล้ว"){
 else if ($message == "vdo"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "video";
-        $arrayPostData['messages'][0]['originalContentUrl'] = "https://youtu.be/5YQkWQbDS9w";//ใส่ url ของ video ที่ต้องการส่ง
+        $arrayPostData['messages'][0]['originalContentUrl'] = "https://video.mthai.com/channel/tbsl/player/1491300905.html";//ใส่ url ของ video ที่ต้องการส่ง
         $arrayPostData['messages'][0]['previewImageUrl'] = "https://upload.wikimedia.org/wikipedia/th/b/bd/%E0%B9%82%E0%B8%94%E0%B8%A3%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%A1%E0%B8%AD%E0%B8%99.png";//ใส่รูป preview ของ video
         replyMsg($arrayHeader,$arrayPostData);
     }
