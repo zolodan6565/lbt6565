@@ -71,11 +71,12 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
 else if($message == "หิวจุง"){
-        $a=array("หาไรกินสิครับ 555","สงสัยต้องเมนูอาหารญี่ปุ่นละ","มาม่าเถอะลูก","อืม แล้ว?");
-        $random_keys=array_rand($a,4);
+		$a=array("หาไรกินสิครับ 555","สงสัยต้องเมนูอาหารญี่ปุ่นละ","มาม่าเถอะลูก","อืม แล้ว?");
+        $random_keys=array_rand($a);
+		
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = echo $a[$random_keys[0]];
+        $arrayPostData['messages'][0]['text'] = echo $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
 else if ($message == "กี่โมงแล้ว"){
@@ -84,13 +85,13 @@ else if ($message == "กี่โมงแล้ว"){
         $arrayPostData['messages'][0]['text'] = date("H โมง i นาที s วินาที");
         replyMsg($arrayHeader,$arrayPostData);
     }
-else if ($message == "vdo"){
+/*else if ($message == "vdo"){
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "video";
         $arrayPostData['messages'][0]['originalContentUrl'] = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4";//ใส่ url ของ video ที่ต้องการส่ง
         $arrayPostData['messages'][0]['previewImageUrl'] = "https://upload.wikimedia.org/wikipedia/th/b/bd/%E0%B9%82%E0%B8%94%E0%B8%A3%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%A1%E0%B8%AD%E0%B8%99.png";//ใส่รูป preview ของ video
         replyMsg($arrayHeader,$arrayPostData);
-    }
+    }*/
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
