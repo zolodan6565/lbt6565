@@ -85,7 +85,7 @@ else if ($message == "กี่โมงแล้ว"){
 else if ($message == "vdo"){
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "video";
-        $arrayPostData['messages'][0]['originalContentUrl'] = "r6---sn-30a7yn7y.c.drive.google.com/videoplayback?id=1483d69203f70745&itag=22&source=webdrive&requiressl=yes&mm=30&mn=sn-30a7yn7y&ms=nxu&mv=u&pl=24&ttl=transient&ei=IzceW7rWKoW0uwX124zIBg&susc=dr&driveid=0B7l4SiYMuNUaQzZwaFlHbzh0dWs&app=explorer&mime=video/mp4&lmt=1505392105009862&mt=1528706399&ip=124.120.101.81&ipbits=0&expire=1528710451&cp=QVNHWkhfT1RTQlhOOmRyVDhfZVZueEtN&sparams=ip,ipbits,expire,id,itag,source,requiressl,mm,mn,ms,mv,pl,ttl,ei,susc,driveid,app,mime,lmt,cp&signature=2414A6723B97240AA8C99119CB56CF66C1FAD6BE.4238526B28AD88F8DED981509D9A705C95A0C700&key=ck2&cpn=fz65D99y-jZiL783&c=WEB_EMBEDDED_PLAYER&cver=20180607]";//ใส่ url ของ video ที่ต้องการส่ง
+        $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.w3schools.com/tags/movie.mp4";//ใส่ url ของ video ที่ต้องการส่ง
         $arrayPostData['messages'][0]['previewImageUrl'] = "https://upload.wikimedia.org/wikipedia/th/b/bd/%E0%B9%82%E0%B8%94%E0%B8%A3%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%A1%E0%B8%AD%E0%B8%99.png";//ใส่รูป preview ของ video
         replyMsg($arrayHeader,$arrayPostData);
     }
