@@ -84,13 +84,13 @@ else if ($message == "กี่โมงแล้ว"){
         $arrayPostData['messages'][0]['text'] = date("H โมง i นาที s วินาที");
         replyMsg($arrayHeader,$arrayPostData);
     }
-else if ($message == "vdo"){
+/*else if ($message == "vdo"){
          $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "video";
         $arrayPostData['messages'][0]['originalContentUrl'] = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4";//ใส่ url ของ video ที่ต้องการส่ง
         $arrayPostData['messages'][0]['previewImageUrl'] = "https://upload.wikimedia.org/wikipedia/th/b/bd/%E0%B9%82%E0%B8%94%E0%B8%A3%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%A1%E0%B8%AD%E0%B8%99.png";//ใส่รูป preview ของ video
         replyMsg($arrayHeader,$arrayPostData);
-    }
+    }*/
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
