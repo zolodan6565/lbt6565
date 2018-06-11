@@ -76,7 +76,7 @@ else if($message == "หิวจุง"){
 		
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = echo $a[$random_keys];
+        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
 else if ($message == "กี่โมงแล้ว"){
