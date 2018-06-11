@@ -85,7 +85,7 @@ else if ($message == "กี่โมงแล้ว"){
 else if ($message == "vdo"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "video";
-        $arrayPostData['messages'][0]['originalContentUrl'] = "https://lh4.googleusercontent.com/O-hGSKneXD3rJubpu_aDb3OiLiVbn3-27upsMcmUVY2fdJeigRhnIn7V4sqmEmFXILzSz77k6-c8vSU=w1920-h1080-n-k-rw";//ใส่ url ของ video ที่ต้องการส่ง
+        $arrayPostData['messages'][0]['originalContentUrl'] = "https://r4---sn-npoe7nez.c.drive.google.com/videoplayback?id=1483d69203f70745&itag=22&source=webdrive&requiressl=yes&pl=24&sc=yes&ttl=transient&ei=6y4eW66FMIKuuQKVnrO4DA&susc=dr&driveid=0B7l4SiYMuNUaQzZwaFlHbzh0dWs&app=texmex&mime=video/mp4&lmt=1505392105009862&ip=124.120.101.81&ipbits=0&expire=1528719147&cp=QVNHWkhfWFFSSFhOOmRyVDdfZEJueEtN&sparams=app,cp,driveid,ei,expire,id,ip,ipbits,itag,lmt,mime,mm,mn,ms,mv,pl,requiressl,sc,source,susc,ttl&signature=58A98D810DF6FE0BFA82F5B47AB6A6CA11DEB4DD.3B99754DF79CB111DBDAA70C0690C317260D2DA3&key=cms1&cpn=MD4WK1oR5k3uYIH8&c=WEB_EMBEDDED_PLAYER&cver=20180607&redirect_counter=1&cm2rm=sn-30als7d&req_id=a5ec8bde8e8ba3ee&cms_redirect=yes&mm=34&mn=sn-npoe7nez&ms=ltu&mt=1528704689&mv=u";//ใส่ url ของ video ที่ต้องการส่ง
         $arrayPostData['messages'][0]['previewImageUrl'] = "https://upload.wikimedia.org/wikipedia/th/b/bd/%E0%B9%82%E0%B8%94%E0%B8%A3%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%A1%E0%B8%AD%E0%B8%99.png";//ใส่รูป preview ของ video
         replyMsg($arrayHeader,$arrayPostData);
     }
