@@ -84,7 +84,7 @@ else if ($message == "กี่โมงแล้ว"){
     }
 else if ($message == "vdo"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "video";
+        $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "https://www.youtube.com/watch?v=5YQkWQbDS9w";
         replyMsg($arrayHeader,$arrayPostData);
     }
