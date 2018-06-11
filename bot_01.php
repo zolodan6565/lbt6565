@@ -73,7 +73,7 @@ else if($message == "หิวจุง"){
 else if($message == "กี่โมงแล้ว"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = date("H:i:s");
+        $arrayPostData['messages'][0]['text'] = date("H โมง i นาที s วินาที");
         replyMsg($arrayHeader,$arrayPostData);
     }
 else {
