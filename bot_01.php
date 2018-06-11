@@ -71,9 +71,11 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
 else if($message == "หิวจุง"){
+        $a=array("หาไรกินสิครับ 555","สงสัยต้องเมนูอาหารญี่ปุ่นละ","มาม่าเถอะลูก");
+        $random_keys=array_rand($a,1);
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "หาไรกินสิครับ 555";
+        $arrayPostData['messages'][0]['text'] = echo $a[$random_keys[0]];
         replyMsg($arrayHeader,$arrayPostData);
     }
 else if ($message == "กี่โมงแล้ว"){
