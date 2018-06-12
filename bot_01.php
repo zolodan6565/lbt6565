@@ -9,11 +9,12 @@
     $arrayHeader[] = "Content-Type: application/json";
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
-
-
-    $what_time = similar_text("ดีจ้า","$message",$percent_what_time);
+   
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
+
+    $what_time = similar_text("ดีจ้า","$message",$percent_what_time);
+
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
