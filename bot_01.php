@@ -13,19 +13,21 @@
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
 
+    $hello = similar_text("สวัสดี","$message",$percent_hello);
+    $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
     $what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
 
 #ตัวอย่าง Message Type "Text"
-    if($message == "สวัสดี"){
+    if($percent_hello > 60){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if($message == "ดีจ้า"){
+    else if($percent_hello_2 > 60){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+        $arrayPostData['messages'][0]['text'] = "อืม หวัดดี";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
