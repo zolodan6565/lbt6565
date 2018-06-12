@@ -19,15 +19,19 @@
 
 #ตัวอย่าง Message Type "Text"
     if($percent_hello > 60){
+	$a=array("อืม หวัดดี","สวัสดีจ้าาา","อืม");
+        $random_keys=array_rand($a);
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";
+	$arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($percent_hello_2 > 60){
+	$a=array("อืม หวัดดี","ใครทักมาละนั้น","หวัดดีลูกหวัดดี","อย่าทัก! กำลังกินอยู่","อันยองฮาเซโย");
+        $random_keys=array_rand($a);
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "อืม หวัดดี";
+        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
@@ -77,7 +81,7 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
 else if($message == "หิวจุง"){
-		$a=array("หาไรกินสิครับ 555","สงสัยต้องเมนูอาหารญี่ปุ่นละ","มาม่าเถอะลูก","อืม แล้ว?");
+	$a=array("หาไรกินสิครับ 555","สงสัยต้องเมนูอาหารญี่ปุ่นละ","มาม่าเถอะลูก","อืม แล้ว?");
         $random_keys=array_rand($a);
 		
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
