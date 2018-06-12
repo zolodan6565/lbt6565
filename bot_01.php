@@ -79,7 +79,8 @@ else if($message == "หิวจุง"){
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
-else if ($message == "กี่โมงแล้ว"){
+	$what_time = similar_text("ดีจ้า","$message",$percent_what_time);
+else if ($percent_what_time > 60){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = date("H โมง i นาที s วินาที");
