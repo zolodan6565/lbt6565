@@ -9,6 +9,9 @@
     $arrayHeader[] = "Content-Type: application/json";
     $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
+
+
+    $what_time = similar_text("ดีจ้า","$message",$percent_what_time);
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
 #ตัวอย่าง Message Type "Text"
@@ -79,7 +82,7 @@ else if($message == "หิวจุง"){
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
-	$what_time = similar_text("ดีจ้า","$message",$percent_what_time);
+	
 else if ($percent_what_time > 60){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
