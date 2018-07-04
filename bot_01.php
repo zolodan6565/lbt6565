@@ -19,12 +19,14 @@
 
 #ตัวอย่าง Message Type "Text"
     if($percent_hello > 60){
+	    for ($i = 0;$i<100;$i++){
 	$a=array("อืม หวัดดี","สวัสดีจ้าาา","อืม");
         $random_keys=array_rand($a);
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
 	$arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
+    	}
     }
     else if($percent_hello_2 > 60){
 	$a=array("อืม หวัดดี","ใครทักมาละนั้น","หวัดดีลูกหวัดดี","อย่าทัก! กำลังกินอยู่","อันยองฮาเซโย");
