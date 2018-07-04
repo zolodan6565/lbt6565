@@ -45,7 +45,7 @@
     }
     #ตัวอย่าง Message Type "Image"
     else if($message == "รูปน้องแมว"){
-        $image_url = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";
+        $image_url = "https://f.ptcdn.info/174/053/000/ov0w3emozV1fbUMSd3F-o.jpg";
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "image";
         $arrayPostData['messages'][0]['originalContentUrl'] = $image_url;
