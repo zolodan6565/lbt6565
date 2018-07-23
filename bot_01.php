@@ -127,6 +127,7 @@ else {
         $arrayPostData['messages'][0]['text'] = "ผมงงอ่ะ พิมพ์ใหม่ได้ป่ะ";
         replyMsg($arrayHeader,$arrayPostData);
     }
+}
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
     
@@ -140,7 +141,7 @@ function replyMsg($arrayHeader,$arrayPostData){
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $result = curl_exec($ch);
         curl_close ($ch);
-    }
+    
 }
    exit;
 ?>
