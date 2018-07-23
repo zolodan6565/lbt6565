@@ -37,15 +37,15 @@
 	   $rdm_answer=$answer[$index_question];
 	    
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "$rdm_question";
+	$arrayPostData['messages'][0]['type'] = "text";
+	$arrayPostData['messages'][0]['text'] = "$rdm_question";
 	replyMsg($arrayHeader,$arrayPostData);
-		if ($message == "ยอม"){
+		/*if ($message == "ยอม"){
 			$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 			$arrayPostData['messages'][0]['type'] = "text";
 			$arrayPostData['messages'][0]['text'] = "$rdm_answer";
 			replyMsg($arrayHeader,$arrayPostData);
-		}
+		}*/
         
     }
 
