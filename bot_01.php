@@ -125,6 +125,12 @@ else if($message == "คนไหนแก่") {
         $arrayPostData['messages'][0]['text'] = "ก็รู้ๆกันอยู่เน๊อะ เจ้เนอะ ฮ่า";
         replyMsg($arrayHeader,$arrayPostData);	
 }
+else if($message == "คนไหนหลายใจ") {
+     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "อีเจ้ไง กุไปละ";
+        replyMsg($arrayHeader,$arrayPostData);	
+}
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
