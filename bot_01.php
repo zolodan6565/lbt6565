@@ -16,14 +16,21 @@
     $active_chat = '';
     $message = $arrayJson['events'][0]['message']['text'];
     if ($message == "คิดถึงบอทจุง"){
-	    $activ_chat = TRUE;
+	$activ_chat = TRUE;
+	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "คิดถึงเหมือนกานนนน จุฟ <3";
+        replyMsg($arrayHeader,$arrayPostData);
     }
     if ($message == "เงียบๆหน่อยคับ"){
-	    $activ_chat = FALSE;
+	$activ_chat = FALSE;
+	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+       	$arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "เค ไปกะได้ อย่ามาง้อละกัน เชอะ!";
+        replyMsg($arrayHeader,$arrayPostData);
     }
 
 while ($active_chat === TRUE) {
-	
     $hello = similar_text("สวัสดี","$message",$percent_hello);
     $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
     $what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
@@ -44,18 +51,6 @@ while ($active_chat === TRUE) {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
-        replyMsg($arrayHeader,$arrayPostData);
-    }
-    else if ( $message == "คิดถึงบอทจุง"){
-	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "คิดถึงเหมือนกานนนน จุฟ <3";
-        replyMsg($arrayHeader,$arrayPostData);
-    }
-    else if ( $message == "เงียบๆหน่อยคับ"){
-	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "เค ไปกะได้ อย่ามาง้อละกัน เชอะ!";
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
