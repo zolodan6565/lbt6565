@@ -1,5 +1,19 @@
 <?php
-
+function replyMsg($arrayHeader,$arrayPostData){
+        $strUrl = "https://api.line.me/v2/bot/message/reply";
+    
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,$strUrl);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);    
+        curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($arrayPostData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $result = curl_exec($ch);
+        curl_close ($ch);
+    
+}
 
     date_default_timezone_set("Asia/Bangkok");
     $accessToken = "TDe3vkudwX2B0LAAHuXzgXqcQcEWLywJbJwJjT+abMoWCiCnwJTv9oeFfTHhSa33ImWCuQtaF2IzXwb4IP8DRlq2eqeApakA8TXK5n6t0mAHg2oa01SeY6Lv1N6B6INUUl8ppXuA5TDR5LW/ObbaiAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
@@ -130,20 +144,6 @@ else {
     }
 }
 
-function replyMsg($arrayHeader,$arrayPostData){
-        $strUrl = "https://api.line.me/v2/bot/message/reply";
-    
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,$strUrl);
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);    
-        curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($arrayPostData));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $result = curl_exec($ch);
-        curl_close ($ch);
-    
-}
+
    exit;
 ?>
