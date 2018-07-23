@@ -37,12 +37,7 @@
         $arrayPostData['messages'][0]['text'] = $b[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if ( $message == "คิดถึงบอทคับ"){
-	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "คิดถึงเหมือนกานนนน จุฟ <3";
-        replyMsg($arrayHeader,$arrayPostData);
-    }
+
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
