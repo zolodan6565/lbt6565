@@ -52,6 +52,12 @@ while ($active_chat === TRUE) {
         $arrayPostData['messages'][0]['text'] = "คิดถึงเหมือนกานนนน จุฟ <3";
         replyMsg($arrayHeader,$arrayPostData);
     }
+    else if ( $message == "เงียบๆหน่อยคับ"){
+	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "เค ไปกะได้ อย่ามาง้อละกัน เชอะ!";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
