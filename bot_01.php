@@ -112,6 +112,12 @@ else if ($percent_what_time > 60){
         $arrayPostData['messages'][0]['previewImageUrl'] = "https://upload.wikimedia.org/wikipedia/th/b/bd/%E0%B9%82%E0%B8%94%E0%B8%A3%E0%B8%B2%E0%B9%80%E0%B8%AD%E0%B8%A1%E0%B8%AD%E0%B8%99.png";//ใส่รูป preview ของ video
         replyMsg($arrayHeader,$arrayPostData);
     }*/
+else if($message == "test") {
+     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "test คับ";
+        replyMsg($arrayHeader,$arrayPostData);	
+}
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
