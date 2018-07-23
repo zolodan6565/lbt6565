@@ -90,12 +90,12 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
 else if($message == "หิวจุง"){
-	$a=array("หาไรกินสิครับ 555","สงสัยต้องเมนูอาหารญี่ปุ่นละ","มาม่าเถอะลูก","อืม แล้ว?");
-        $random_keys=array_rand($a);
+	$c=array("หาไรกินสิครับ 555","สงสัยต้องเมนูอาหารญี่ปุ่นละ","มาม่าเถอะลูก","อืม แล้ว?");
+        $random_keys=array_rand($c);
 		
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
+        $arrayPostData['messages'][0]['text'] = $c[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
 	
