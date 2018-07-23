@@ -21,7 +21,7 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "คิดถึงเหมือนกานนนน จุฟ <3";
         replyMsg($arrayHeader,$arrayPostData);
-	    while ($active_chat === TRUE) {
+	    while ($active_chat == TRUE) {
     $hello = similar_text("สวัสดี","$message",$percent_hello);
     $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
     $what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
