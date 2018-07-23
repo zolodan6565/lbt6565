@@ -14,7 +14,7 @@
    
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-    if ($message == "คิดถึงบอทจุง"){
+   /* if ($message == "คิดถึงบอทจุง"){
 	$activ_chat = TRUE;
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
@@ -29,8 +29,7 @@
         $arrayPostData['messages'][0]['text'] = "เค ไปกะได้ อย่ามาง้อละกัน เชอะ!";
         replyMsg($arrayHeader,$arrayPostData);
     }
-
-  if ($active_chat == TRUE || $active_chat == "1") {
+*/
     $hello = similar_text("สวัสดี","$message",$percent_hello);
     $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
     $what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
@@ -53,6 +52,18 @@
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
+	else if ($message == "คนไหนน่ารักหรอ"){
+	  $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "คนที่ดั้งแหมบๆอ่ะ แฮร่";
+        replyMsg($arrayHeader,$arrayPostData);	
+	}
+else if ($message == "คนไหนแก่"){
+	  $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "หึๆ รู้ๆกันอยู่เน๊อะ เจ้ ฮ่า";
+        replyMsg($arrayHeader,$arrayPostData);	
+	}
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -127,7 +138,6 @@ else {
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ผมงงอ่ะ พิมพ์ใหม่ได้ป่ะ";
         replyMsg($arrayHeader,$arrayPostData);
-    }
 }
 
 function replyMsg($arrayHeader,$arrayPostData){
