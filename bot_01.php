@@ -30,11 +30,11 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($message == "ขอคำถาม"){
-	   $index_question = rand(0,1);
+	   //$index_question = rand(0,1);
 	   $question=array("แกงเขียวหวาน ทำอะไรถึงจะอร่อย","ทำไม ปลาจึงวางไข่");
 	   $answer=array("อยากให้อร่อยก็กินสิคับ","เพราะถ้าโยน ไข่จะแตก");
-	   $rdm_question=$question[$index_question];
-	   $rdm_answer=$answer[$index_question];
+	   $rdm_question=$question[0];
+	   $rdm_answer=$answer[0];
 	    
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "text";
