@@ -39,13 +39,13 @@
     }
 
     #ตัวอย่าง Message Type "Sticker"
-    else if($message == "ฝันดี"){
+   /* else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "sticker";
         $arrayPostData['messages'][0]['packageId'] = "2";
         $arrayPostData['messages'][0]['stickerId'] = "46";
         replyMsg($arrayHeader,$arrayPostData);
-    }
+    }*/
     #ตัวอย่าง Message Type "Image"
     else if($message == "รูปน้องแมว"){
         $image_url = "https://f.ptcdn.info/174/053/000/ov0w3emozV1fbUMSd3F-o.jpg";
