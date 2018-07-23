@@ -1,5 +1,5 @@
 <?php
-$active_chat = "";
+
 
     date_default_timezone_set("Asia/Bangkok");
     $accessToken = "TDe3vkudwX2B0LAAHuXzgXqcQcEWLywJbJwJjT+abMoWCiCnwJTv9oeFfTHhSa33ImWCuQtaF2IzXwb4IP8DRlq2eqeApakA8TXK5n6t0mAHg2oa01SeY6Lv1N6B6INUUl8ppXuA5TDR5LW/ObbaiAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
@@ -13,6 +13,7 @@ $active_chat = "";
     
    
     //รับข้อความจากผู้ใช้
+    $active_chat = TRUE;
     $message = $arrayJson['events'][0]['message']['text'];
     if ($message == "คิดถึงบอทจุง"){
 	    $activ_chat = TRUE;
@@ -21,7 +22,7 @@ $active_chat = "";
 	    $activ_chat = FALSE;
     }
 
-while ($active_chat == TRUE) {
+while ($active_chat === TRUE) {
 	
     $hello = similar_text("สวัสดี","$message",$percent_hello);
     $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
