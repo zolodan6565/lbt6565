@@ -29,6 +29,28 @@
 	$arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
+    else if($message == "ขอคำถาม"){
+	   $index_question = rand(0,1)
+	   $question=array("แกงเขียวหวาน ทำอะไรถึงจะอร่อย","ทำไม ปลาจึงวางไข่");
+	   $answer=array("อยากให้อร่อยก็กินสิคับ","เพราะถ้าโยน ไข่จะแตก");
+	   $rdm_question=$question[$index_question];
+	   $rdm_answer=$answer[$index_question];
+	    
+	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "$rdm_question";
+	replyMsg($arrayHeader,$arrayPostData);
+		if ($message == "ยอม"){
+			$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+			$arrayPostData['messages'][0]['type'] = "text";
+			$arrayPostData['messages'][0]['text'] = "$rdm_answer";
+			replyMsg($arrayHeader,$arrayPostData);
+		}
+        
+    }
+
+
+
     else if($percent_hello_2 > 60){
 	$b=array("อืม หวัดดี","ใครทักมาละนั้น","หวัดดีลูกหวัดดี","อย่าทัก! กำลังกินอยู่","อันยองฮาเซโย");
         $random_keys=array_rand($b);
