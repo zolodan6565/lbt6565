@@ -31,6 +31,7 @@
     }
 
 while ($active_chat === TRUE) {
+$message = $arrayJson['events'][0]['message']['text'];
     $hello = similar_text("สวัสดี","$message",$percent_hello);
     $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
     $what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
