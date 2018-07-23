@@ -107,10 +107,17 @@ else if ($percent_what_time > 60){
         replyMsg($arrayHeader,$arrayPostData);
     }*/
 else if($message == "คนไหนน่ารักหรอ") {
-     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+    /* $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "คนที่ดั้งแหมบๆอ่ะ แฮร่";
-        replyMsg($arrayHeader,$arrayPostData);	
+        replyMsg($arrayHeader,$arrayPostData);
+	*/
+	$a=array("คนที่ดั้งแหมบๆอ่ะ แฮร่","หืมมม คิดแปป","ไม่เอา ไม่ตอบ กุเขิลลลล");
+        $random_keys=array_rand($a);
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
+        replyMsg($arrayHeader,$arrayPostData);
 }
 else if($message == "คนไหนแก่") {
      $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
