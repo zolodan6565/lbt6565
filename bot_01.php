@@ -131,6 +131,9 @@ else if($message == "คนไหนหลายใจ") {
         $arrayPostData['messages'][0]['text'] = "อีเจ้ไง กุไปละ";
         replyMsg($arrayHeader,$arrayPostData);	
 }
+else if($message == "") {
+     exit;
+}
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
