@@ -35,18 +35,6 @@
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
- else if ($message == "คนไหนน่ารักหรอ"){
- $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ก็...คนที่ดั้งแหมบๆอ่ะ แฮร่";
-        replyMsg($arrayHeader,$arrayPostData);	 
- }
-else if ($message == "คนไหนดูเเก่"){
- $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ก็รู้ๅกันอยู่เน๊อะ เจ้ ฮ่า";
-        replyMsg($arrayHeader,$arrayPostData);	 
- }
     #ตัวอย่าง Message Type "Sticker"
     else if($message == "ฝันดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -135,6 +123,6 @@ function replyMsg($arrayHeader,$arrayPostData){
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $result = curl_exec($ch);
         curl_close ($ch);
-    }
+    } 
    exit;
 ?>
