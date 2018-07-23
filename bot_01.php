@@ -14,7 +14,7 @@ $active_chat = "";
    
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-    if ($message == "คิดถึงบอทคับ"){
+    if ($message == "คิดถึงบอทจุง"){
 	    $activ_chat = TRUE;
     }
     if ($message == "เงียบๆหน่อยคับ"){
@@ -45,7 +45,7 @@ while ($active_chat == TRUE) {
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if ( $message == "คิดถึงบอทคับ"){
+    else if ( $message == "คิดถึงบอทจุง"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "คิดถึงเหมือนกานนนน จุฟ <3";
