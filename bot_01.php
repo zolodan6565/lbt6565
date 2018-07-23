@@ -14,14 +14,6 @@
    
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-    if ($message == "คิดถึงบอทคับ"){
-	    $activ_chat = TRUE;
-    }
-    if ($message == "เงียบๆหน่อยคับ"){
-	    $activ_chat = FALSE;
-    }
-
-
 	
     $hello = similar_text("สวัสดี","$message",$percent_hello);
     $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
