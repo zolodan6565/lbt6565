@@ -18,8 +18,7 @@
     $what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
 
 #ตัวอย่าง Message Type "Text"
-    if($percent_hello > 60){
-	    
+    if($percent_hello > 60){    
 	$a=array("อืม หวัดดี","สวัสดีจ้าาา","อืม");
         $random_keys=array_rand($a);
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -28,11 +27,11 @@
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($percent_hello_2 > 60){
-	$a=array("อืม หวัดดี","ใครทักมาละนั้น","หวัดดีลูกหวัดดี","อย่าทัก! กำลังกินอยู่","อันยองฮาเซโย");
+	$b=array("อืม หวัดดี","ใครทักมาละนั้น","หวัดดีลูกหวัดดี","อย่าทัก! กำลังกินอยู่","อันยองฮาเซโย");
         $random_keys=array_rand($a);
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
+        $arrayPostData['messages'][0]['text'] = $b[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
     #ตัวอย่าง Message Type "Sticker"
