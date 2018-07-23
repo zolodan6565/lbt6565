@@ -13,7 +13,6 @@
     
    
     //รับข้อความจากผู้ใช้
-    $active_chat = '';
     $message = $arrayJson['events'][0]['message']['text'];
     if ($message == "คิดถึงบอทจุง"){
 	$activ_chat = TRUE;
