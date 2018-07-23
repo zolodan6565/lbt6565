@@ -132,7 +132,10 @@ else if($message == "คนไหนหลายใจ") {
         replyMsg($arrayHeader,$arrayPostData);	
 }
 else if($message == "") {
-     exit;
+  	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดีออจ้าววววว";
+        replyMsg($arrayHeader,$arrayPostData);
 }
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
