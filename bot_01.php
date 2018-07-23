@@ -21,17 +21,7 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "คิดถึงเหมือนกานนนน จุฟ <3";
         replyMsg($arrayHeader,$arrayPostData);
-    }
-    if ($message == "เงียบๆหน่อยคับ"){
-	$activ_chat = FALSE;
-	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-       	$arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "เค ไปกะได้ อย่ามาง้อละกัน เชอะ!";
-        replyMsg($arrayHeader,$arrayPostData);
-    }
-
-while ($active_chat === TRUE) {
-$message = $arrayJson['events'][0]['message']['text'];
+	    while ($active_chat === TRUE) {
     $hello = similar_text("สวัสดี","$message",$percent_hello);
     $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
     $what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
@@ -130,6 +120,16 @@ else {
         replyMsg($arrayHeader,$arrayPostData);
     }
 }
+    }
+    if ($message == "เงียบๆหน่อยคับ"){
+	$activ_chat = FALSE;
+	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+       	$arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "เค ไปกะได้ อย่ามาง้อละกัน เชอะ!";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
+
+
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
     
