@@ -84,16 +84,15 @@
         $arrayPostData['messages'][1]['stickerId'] = "515";
         replyMsg($arrayHeader,$arrayPostData);
     }
-else if($message == "หิวจุง"){
+/*else if($message == "หิวจุง"){
 	$c=array("หาไรกินสิครับ 555","สงสัยต้องเมนูอาหารญี่ปุ่นละ","มาม่าเถอะลูก","อืม แล้ว?");
         $random_keys=array_rand($c);
-		
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = $c[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
-	
+*/	
 else if ($percent_what_time > 60){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
