@@ -1,7 +1,7 @@
 <?php
-$active_chat = true;
+$chat_start_talk = true;
 
-if ($active_chat == true){
+if ($chat_start_talk == true){
     date_default_timezone_set("Asia/Bangkok");
     $accessToken = "TDe3vkudwX2B0LAAHuXzgXqcQcEWLywJbJwJjT+abMoWCiCnwJTv9oeFfTHhSa33ImWCuQtaF2IzXwb4IP8DRlq2eqeApakA8TXK5n6t0mAHg2oa01SeY6Lv1N6B6INUUl8ppXuA5TDR5LW/ObbaiAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
   
@@ -165,7 +165,7 @@ else if($message == "เงียบๆหน่อยคับ") {
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "โอเคงับ";
         replyMsg($arrayHeader,$arrayPostData);
-	$active_chat = FALSE;
+	$chat_start_talk = FALSE;
 }
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -192,7 +192,7 @@ function replyMsg($arrayHeader,$arrayPostData){
 }
 
 
-if ($active_chat == true){
+if ($chat_start_talk == true){
 	 date_default_timezone_set("Asia/Bangkok");
     $accessToken = "TDe3vkudwX2B0LAAHuXzgXqcQcEWLywJbJwJjT+abMoWCiCnwJTv9oeFfTHhSa33ImWCuQtaF2IzXwb4IP8DRlq2eqeApakA8TXK5n6t0mAHg2oa01SeY6Lv1N6B6INUUl8ppXuA5TDR5LW/ObbaiAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
   
@@ -207,11 +207,11 @@ if ($active_chat == true){
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
   	if($message == "บอทจ๋าาา") {
-	$active_chat = TRUE;
   	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "จ๋าาาา";
         replyMsg($arrayHeader,$arrayPostData);
+	$chat_start_talk = TRUE;
 	}
 	function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
