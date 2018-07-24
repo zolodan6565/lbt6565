@@ -1,6 +1,7 @@
 <?php
+$active_chat = TRUE;
 
-
+if ($active_chat == TRUE){
     date_default_timezone_set("Asia/Bangkok");
     $accessToken = "TDe3vkudwX2B0LAAHuXzgXqcQcEWLywJbJwJjT+abMoWCiCnwJTv9oeFfTHhSa33ImWCuQtaF2IzXwb4IP8DRlq2eqeApakA8TXK5n6t0mAHg2oa01SeY6Lv1N6B6INUUl8ppXuA5TDR5LW/ObbaiAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
   
@@ -20,7 +21,6 @@
     //$what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
 #ตัวอย่าง Message Type "Text"
     if($percent_hello > 85){
-	    
 	$a=array("อืม หวัดดี","สวัสดีจ้าาา","อืม");
         $random_keys=array_rand($a);
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -132,14 +132,7 @@ else if($message == "เขาจะลืมเราปะ") {
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
 }
-else if($message == "บอทจ๋าาา") {
-	$a=array("อารายยยย","จ๋าาาา","อืม ว่ามา");
-        $random_keys=array_rand($a);
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
-        replyMsg($arrayHeader,$arrayPostData);
-}
+
 else if($message == "เขาคิดถึงเราจิงปะ") {
 	$a=array("ไม่รุ้สิ เดาใจยาก","อย่ามโนไอ้หนู","ไม่หรอกกกกกมั้ง");
         $random_keys=array_rand($a);
@@ -167,6 +160,13 @@ else if($message == "") {
         $arrayPostData['messages'][0]['text'] = "สวัสดีออจ้าววววว";
         replyMsg($arrayHeader,$arrayPostData);
 }
+else if($message == "เงียบๆหน่อยคับ") {
+  	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "โอเคงับ";
+        replyMsg($arrayHeader,$arrayPostData);
+	$active_chat = FALSE;
+}
 else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
@@ -189,4 +189,45 @@ function replyMsg($arrayHeader,$arrayPostData){
     }
 
    exit;
+}
+
+
+if ($active_chat == FALSE){
+	 date_default_timezone_set("Asia/Bangkok");
+    $accessToken = "TDe3vkudwX2B0LAAHuXzgXqcQcEWLywJbJwJjT+abMoWCiCnwJTv9oeFfTHhSa33ImWCuQtaF2IzXwb4IP8DRlq2eqeApakA8TXK5n6t0mAHg2oa01SeY6Lv1N6B6INUUl8ppXuA5TDR5LW/ObbaiAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
+  
+    $content = file_get_contents('php://input');
+    $arrayJson = json_decode($content, true);
+    
+    $arrayHeader = array();
+    $arrayHeader[] = "Content-Type: application/json";
+    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
+    
+   
+    //รับข้อความจากผู้ใช้
+    $message = $arrayJson['events'][0]['message']['text'];
+  	if($message == "บอทจ๋าาา") {
+	$active_chat = TRUE;
+  	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "จ๋าาาา";
+        replyMsg($arrayHeader,$arrayPostData);
+	}
+	function replyMsg($arrayHeader,$arrayPostData){
+        $strUrl = "https://api.line.me/v2/bot/message/reply";
+    
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,$strUrl);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $arrayHeader);    
+        curl_setopt($ch, CURLOPT_POSTFIELDS,json_encode($arrayPostData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        $result = curl_exec($ch);
+        curl_close ($ch);
+    }
+
+   exit;
+}
 ?>
