@@ -1,5 +1,5 @@
 <?php
-$chat_start_talk = true;
+$chat_start_talk = "";
 date_default_timezone_set("Asia/Bangkok");
     $accessToken = "TDe3vkudwX2B0LAAHuXzgXqcQcEWLywJbJwJjT+abMoWCiCnwJTv9oeFfTHhSa33ImWCuQtaF2IzXwb4IP8DRlq2eqeApakA8TXK5n6t0mAHg2oa01SeY6Lv1N6B6INUUl8ppXuA5TDR5LW/ObbaiAdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
   
@@ -195,7 +195,7 @@ function replyMsg($arrayHeader,$arrayPostData){
         curl_close ($ch);
     }
 
-  // exit;
+   exit;
 
 
 /*
