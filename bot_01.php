@@ -169,7 +169,7 @@ else if($message == "เงียบๆหน่อยคับ") {
 else if ($message == "test") {
   	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "test = $chat_start_talk";
+        $arrayPostData['messages'][0]['text'] = "test";
         replyMsg($arrayHeader,$arrayPostData);
 	break;
 }
