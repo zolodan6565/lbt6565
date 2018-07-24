@@ -18,7 +18,6 @@
     $hello = similar_text("สวัสดี","$message",$percent_hello);
     $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
     //$what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
-
 #ตัวอย่าง Message Type "Text"
     if($percent_hello > 60){
 	    
@@ -29,27 +28,7 @@
 	$arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if($message == "ขอคำถาม"){
-	   //$index_question = rand(0,1);
-	   $question=array("แกงเขียวหวาน ทำอะไรถึงจะอร่อย","ทำไม ปลาจึงวางไข่");
-	   $answer=array("อยากให้อร่อยก็กินสิคับ","เพราะถ้าโยน ไข่จะแตก");
-	   $rdm_question=$question[0];
-	   $rdm_answer=$answer[0];
-	    
-	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-	$arrayPostData['messages'][0]['type'] = "text";
-	$arrayPostData['messages'][0]['text'] = $rdm_question;
-	replyMsg($arrayHeader,$arrayPostData);
-		/*if ($message == "ยอม"){
-			$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-			$arrayPostData['messages'][0]['type'] = "text";
-			$arrayPostData['messages'][0]['text'] = "$rdm_answer";
-			replyMsg($arrayHeader,$arrayPostData);
-		}*/
-        
-    }
-
-
+    
 
     else if($percent_hello_2 > 60){
 	$b=array("อืม หวัดดี","ใครทักมาละนั้น","หวัดดีลูกหวัดดี","อย่าทัก! กำลังกินอยู่","อันยองฮาเซโย");
@@ -129,11 +108,6 @@ else if ($message == "กี่โมงแล้ว"){
         replyMsg($arrayHeader,$arrayPostData);
     }*/
 else if($message == "คนไหนน่ารักหรอ") {
-    /* $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "คนที่ดั้งแหมบๆอ่ะ แฮร่";
-        replyMsg($arrayHeader,$arrayPostData);
-	*/
 	$a=array("คนที่ดั้งแหมบๆอ่ะ แฮร่","หืมมม คิดแปป","ไม่เอา ไม่ตอบ กุเขิลลลล");
         $random_keys=array_rand($a);
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -141,18 +115,35 @@ else if($message == "คนไหนน่ารักหรอ") {
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
 }
-else if($message == "คนไหนแก่") {
+
+else if($message == "คิดว่าคนนั้นเขาเเพ้ยัง") {
+	$a=array("ไม่รู้สิ น่าจะใกล้ละ","แพ้แล้วมั้ง ฮ่า","ถามเองดิ");
+        $random_keys=array_rand($a);
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
+        replyMsg($arrayHeader,$arrayPostData);
+}
+else if($message == "เขาจะลืมเราปะ") {
+	$a=array("เตรียมบินได้เลย","นั้นสิ เห้ออออ","ไม่น่ารอด");
+        $random_keys=array_rand($a);
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
+        replyMsg($arrayHeader,$arrayPostData);
+}
+/*else if($message == "คนไหนแก่") {
      $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ก็รู้ๆกันอยู่เน๊อะ เจ้เนอะ ฮ่า";
         replyMsg($arrayHeader,$arrayPostData);	
-}
-else if($message == "คนไหนหลายใจ") {
+}*/
+/*else if($message == "คนไหนหลายใจ") {
      $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "อีเจ้ไง กุไปละ";
         replyMsg($arrayHeader,$arrayPostData);	
-}
+}*/
 else if($message == "") {
   	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
