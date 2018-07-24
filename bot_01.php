@@ -164,7 +164,7 @@ else if($message == "เงียบๆหน่อยคับ") {
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "โอเคงับ";
         replyMsg($arrayHeader,$arrayPostData);
-	$chat_start_talk = FALSE;
+	
 }
 else if ($message == "test") {
   	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
