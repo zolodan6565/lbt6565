@@ -19,7 +19,7 @@
     $hello_2 = similar_text("ดีจ้า","$message",$percent_hello_2);
     //$what_time = similar_text("กี่โมงแล้ว","$message",$percent_what_time);
 #ตัวอย่าง Message Type "Text"
-    if($percent_hello > 60){
+    if($percent_hello > 80){
 	    
 	$a=array("อืม หวัดดี","สวัสดีจ้าาา","อืม");
         $random_keys=array_rand($a);
@@ -30,7 +30,7 @@
     }
     
 
-    else if($percent_hello_2 > 60){
+    else if($percent_hello_2 > 80){
 	$b=array("อืม หวัดดี","ใครทักมาละนั้น","หวัดดีลูกหวัดดี","อย่าทัก! กำลังกินอยู่","อันยองฮาเซโย");
         $random_keys=array_rand($b);
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
