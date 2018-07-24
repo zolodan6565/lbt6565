@@ -140,6 +140,14 @@ else if($message == "บอทจ๋าาา") {
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
 }
+else if($message == "เขาคิดถึงเราจิงปะ") {
+	$a=array("ไม่รุ้สิ เดาใจยาก","อย่ามโนไอ้หนู","ไม่หรอกกกกกมั้ง");
+        $random_keys=array_rand($a);
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
+        replyMsg($arrayHeader,$arrayPostData);
+}
 
 /*else if($message == "คนไหนแก่") {
      $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
